@@ -38,6 +38,19 @@ class FechaTest {
 
     @org.junit.jupiter.api.Test
     void diasEntreFechas() {
+        Fecha f1 = new Fecha(22,1,2025);
+        Fecha f2 = new Fecha(22,2,2025);
+        Fecha f3 = new Fecha(31,12,2023);
+        Fecha f4 = new Fecha(1,1,2024);
+
+        //Casos en el mismo año
+        assertEquals(31,f2.diasEntreFechas(f1));
+        assertEquals(-31,f1.diasEntreFechas(f2));
+        assertEquals(-388,f3.diasEntreFechas(f1));
+        assertEquals(388,f1.diasEntreFechas(f3));
+
+        assertEquals(-1,f3.diasEntreFechas(f4));
+        assertEquals(1,f4.diasEntreFechas(f3));
     }
 
 

@@ -161,7 +161,7 @@ public class Fecha {
         diasTotales=diasAnio-fechaMenor.diaDelAnio();
 
         // Días en años intermedios
-        for (int anio = fechaMenor.anio+1; anio <= fechaMayor.anio; anio++) {
+        for (int anio = fechaMenor.anio+1; anio < fechaMayor.anio; anio++) {
             diasTotales=diasTotales+365;
             if (esBisiesto(anio)) {
                 diasTotales++;
