@@ -1,3 +1,5 @@
+package  utilidades;
+
 /**
  * Representa una fecha con día, mes y año.
  * @author
@@ -70,7 +72,7 @@ public class Fecha {
         return dias;
     }
 
-    private static boolean esBisiesto(int anio) {
+    public static boolean esBisiesto(int anio) {
         if ( (anio % 400 == 0) ||
                 ( (anio % 4 == 0) && (anio % 100 != 0) ) )
             return true;
@@ -93,11 +95,16 @@ public class Fecha {
      */
     public int diaDelAnio() {
         int[] diasPorMes = {31,28,31, 30,31, 30,31,31, 30,31, 30,31};
+
         int diasHastaFecha = 0;
-        for (int i = 1; i <= this.mes; i++) {
+        for (int i = 0; i < this.mes-1; i++) {
             diasHastaFecha += diasPorMes[i];
         }
-        diasHastaFecha=this.dia;
+
+        diasHastaFecha+=this.dia;
+        if (esBisiesto(this.anio) && diasHastaFecha > 59) {
+            diasHastaFecha += 1;
+        }
         return diasHastaFecha;
     }
 
