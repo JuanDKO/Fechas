@@ -113,7 +113,7 @@ public class Fecha {
      * @param otraFecha
      * @return
      */
-    private boolean esPosterior(Fecha otraFecha) {
+    boolean esPosterior(Fecha otraFecha) {
         if (this.anio > otraFecha.anio) {
             return true;
         } else if (this.anio==otraFecha.anio) {
