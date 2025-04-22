@@ -137,6 +137,7 @@ public class Fecha {
     public long diasEntreFechas(Fecha otraFecha) {
         if (this.equals(otraFecha)) return 0;
 
+
         Fecha fechaMenor = this;
         Fecha fechaMayor = otraFecha;
         int invertirSigno = -1;
